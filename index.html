@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginastel Baturetno OFC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 0.9em;
+            margin: 0 10px 10px;
+        }
+
+        .cta {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            display: inline-block;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #218838;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #007bff;
+            margin: 10px 0;
+        }
+
+        .modal img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background-color: #e9ecef;
+        }
+
+        .contact h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .contact a:hover {
+            color: #0056b3;
+        }
+
+        .contact i {
+            margin-right: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ginastel Baturetno</h1>
+    </header>
+
+    <div class="container">
+        <!-- Kartu Minuman -->
+        <div class="card" data-modal="es-teh">
+            <img src="image0.jpg" alt="Es Teh">
+            <h2>Es Teh</h2>
+            <p>Es teh manis yang menyegarkan, cocok untuk menghilangkan dahaga di hari yang panas.</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+
+        <div class="card" data-modal="es-teh-jumbo">
+            <img src="image0.jpg" alt="Es Teh Jumbo">
+            <h2>Es Teh Jumbo</h2>
+            <p>Porsi besar es teh manis untuk mereka yang sangat haus!</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+
+        <div class="card" data-modal="es-teh-lemon">
+            <img src="image0.jpg" alt="Es Teh Lemon">
+            <h2>Es Teh Lemon</h2>
+            <p>Es teh manis dengan tambahan perasan lemon segar, menyegarkan dan penuh vitamin C.</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+
+        <div class="card" data-modal="es-teh-susu">
+            <img src="image0.jpg" alt="Es Teh Susu">
+            <h2>Es Teh Susu</h2>
+            <p>Kombinasi unik es teh dengan susu yang lembut dan manis.</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+
+        <div class="card" data-modal="es-susu-sirup-frambos">
+            <img src="image0.jpg" alt="Es Susu Sirup Frambos">
+            <h2>Es Susu Sirup Frambos</h2>
+            <p>Es susu dengan sirup frambos yang manis dan harum.</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+
+        <div class="card" data-modal="es-susu-sirup-melon">
+            <img src="image0.jpg" alt="Es Susu Sirup Melon">
+            <h2>Es Susu Sirup Melon</h2>
+            <p>Perpaduan es susu dengan sirup melon yang segar dan menyegarkan.</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+
+        <div class="card" data-modal="es-teh-mix">
+            <img src="image0.jpg" alt="Es Teh Mix">
+            <h2>Es Teh Mix</h2>
+            <p>Campuran teh, susu, dan sirup untuk rasa yang unik dan lezat.</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+
+        <div class="card" data-modal="teh-anger">
+            <img src="image0.jpg" alt="Teh Anget">
+            <h2>Teh Anget</h2>
+            <p>Teh hangat yang menenangkan, cocok untuk malam yang dingin.</p>
+            <a href="#" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <!-- Modal untuk detail minuman -->
+    <div id="modal-es-teh" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image1.jpg" alt="Es Teh">
+            <h2>Es Teh</h2>
+            <p>Es teh manis yang menyegarkan, cocok untuk menghilangkan dahaga di hari yang panas.</p>
+            <p class="price">Harga: Rp 3.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Es%20Teh" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div id="modal-es-teh-jumbo" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image2.jpg" alt="Es Teh Jumbo">
+            <h2>Es Teh Jumbo</h2>
+            <p>Porsi besar es teh manis untuk mereka yang sangat haus!</p>
+            <p class="price">Harga: Rp 3.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Es%20Teh%20Jumbo" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div id="modal-es-teh-lemon" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image3.jpg" alt="Es Teh Lemon">
+            <h2>Es Teh Lemon</h2>
+            <p>Es teh manis dengan tambahan perasan lemon segar, menyegarkan dan penuh vitamin C.</p>
+            <p class="price">Harga: Rp 3.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Es%20Teh%20Lemon" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div id="modal-es-teh-susu" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image4.jpg" alt="Es Teh Susu">
+            <h2>Es Teh Susu</h2>
+            <p>Kombinasi unik es teh dengan susu yang lembut dan manis.</p>
+            <p class="price">Harga: Rp 3.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Es%20Teh%20Susu" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div id="modal-es-susu-sirup-frambos" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image5.jpg" alt="Es Susu Sirup Frambos">
+            <h2>Es Susu Sirup Frambos</h2>
+            <p>Es susu dengan sirup frambos yang manis dan harum.</p>
+            <p class="price">Harga: Rp 5.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Es%20Susu%20Sirup%20Frambos" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div id="modal-es-susu-sirup-melon" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image6.jpg" alt="Es Susu Sirup Melon">
+            <h2>Es Susu Sirup Melon</h2>
+            <p>Perpaduan es susu dengan sirup melon yang segar dan menyegarkan.</p>
+            <p class="price">Harga: Rp 5.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Es%20Susu%20Sirup%20Melon" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div id="modal-es-teh-mix" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image7.jpg" alt="Es Teh Mix">
+            <h2>Es Teh Mix</h2>
+            <p>Campuran teh, susu, dan sirup untuk rasa yang unik dan lezat.</p>
+            <p class="price">Harga: Rp 5.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Es%20Teh%20Mix" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div id="modal-teh-anger" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image8.jpg" alt="Teh Anget">
+            <h2>Teh Anget</h2>
+            <p>Teh hangat yang menenangkan, cocok untuk malam yang dingin.</p>
+            <p class="price">Harga: Rp 3.000</p>
+            <a href="https://wa.me/+6282257188737?text=Saya%20ingin%20memesan%20Teh%20Anget" class="cta">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>Contact Me</h2>
+        <a href="mailto:irul26hafidh@gmail.com" title="Email"><i class="fa fa-envelope"></i>Email</a>
+        <a href="https://www.instagram.com/fidh.syah" target="_blank" title="Instagram"><i class="fa fa-instagram"></i>Instagram</a>
+        <a href="https://www.tiktok.com/@ykmyhvd" target="_blank" title="TikTok"><i class="fa fa-tiktok"></i>TikTok</a>
+        <a href="https://wa.me/+6289509440895" title="WhatsApp"><i class="fa fa-whatsapp"></i>WhatsApp</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-wO2ZrTQ8H78TMBH6FjQPOZl5i9B3oLbbjT/pG1nZEXBiy06RhWkz5WwMhGQXUAKy4gChX1DSaFg3AZs7TxF5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = `modal-${card.getAttribute('data-modal')}`;
+                document.getElementById(modalId).style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.close').forEach(closeButton => {
+            closeButton.addEventListener('click', () => {
+                closeButton.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
